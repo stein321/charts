@@ -337,7 +337,6 @@ The following table lists the configurable parameters of the mission-control cha
 | `elasticsearch.resources.limits.memory`      | Elasticsearch memory limit                      |                                       |
 | `elasticsearch.resources.limits.cpu`         | Elasticsearch cpu limit                         |                                       |
 | `elasticsearch.env.clusterName`              | Elasticsearch Cluster Name                      | `es-cluster`                          |
-| `elasticsearch.env.minimumMasterNodes`       | The value for discovery.zen.minimum_master_nodes. Should be set to (replicaCount / 2) + 1 | `1` |
 | `logger.image.repository`                    | repository for logger image                     | `busybox`                             |
 | `logger.image.tag`                           | tag for logger image                            | `1.30`                                |
 | `missionControl.name`                        | Mission Control name                            | `mission-control`                     |

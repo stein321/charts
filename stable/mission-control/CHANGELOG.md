@@ -1,6 +1,11 @@
 # JFrog Mission-Control Chart Changelog
 All changes to this chart will be documented in this file.
 
+## [3.1.0] - Apr 9, 2020
+* Upgrade Elasticsearch version to 7.6.1
+* Upgrade Mission Control version to 4.3.2
+* **NOTE:** If you have externalized elasticsearch, please upgrade your elasticsearch to 7.6.1 to work with Mission Control 4.3.x. Mission Control version 4.3.x and above is not compatible with Elasticsearch version 6.x.
+
 ## [3.0.23] - April 3, 2020
 * Support masterKey and joinKey as secrets
 * Support `masterKey` (previously `mcKey`) in values.yaml
