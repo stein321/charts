@@ -409,6 +409,7 @@ pipelines:
         - persistentvolumeclaims
         - pods
         - deployments/scale
+        - secrets
         verbs: ["*"]
 
   # Add any list of configmaps to Pipelines
