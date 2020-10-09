@@ -431,7 +431,20 @@ pipelines:
   #    mountPath: /scripts/script.sh
   #    subPath: script.sh
 
-  ## Add custom init containers
+  ## Add custom init begin containers - first init container to run
+  customInitContainersBegin: |
+  #  - name: "custom-begin-setup"
+  #    image: "{{ .Values.initContainer.image }}"
+  #    imagePullPolicy: "{{ .Values.initContainer.pullPolicy}}"
+  #    command:
+  #      - 'sh'
+  #      - '-c'
+  #      - 'touch {{ .Values.pipelines.mountPath }}/example-custom-setup'
+  #    volumeMounts:
+  #      - mountPath: "{{ .Values.pipelines.mountPath}}"
+  #        name: jfrog-pipelines-folder
+
+  ## Add custom init containers - last init container to run
   customInitContainers: |
   #  - name: "custom-setup"
   #    image: "{{ .Values.initContainer.image }}"
@@ -442,7 +455,7 @@ pipelines:
   #      - 'touch {{ .Values.pipelines.mountPath }}/example-custom-setup'
   #    volumeMounts:
   #      - mountPath: "{{ .Values.pipelines.mountPath}}"
-  #        name: pipelines-data
+  #        name: jfrog-pipelines-folder
 
   ## Add custom sidecar containers
   # - The provided example uses a custom volume (customVolumes)
@@ -1176,7 +1189,20 @@ vault:
   #    mountPath: /scripts/script.sh
   #    subPath: script.sh
 
-  ## Add custom init containers
+  ## Add custom init begin containers - first init container to run
+  customInitContainersBegin: |
+  #  - name: "custom-begin-setup"
+  #    image: "{{ .Values.initContainer.image }}"
+  #    imagePullPolicy: "{{ .Values.initContainer.pullPolicy}}"
+  #    command:
+  #      - 'sh'
+  #      - '-c'
+  #      - 'touch {{ .Values.pipelines.mountPath }}/example-custom-setup'
+  #    volumeMounts:
+  #      - mountPath: "{{ .Values.pipelines.mountPath}}"
+  #        name: jfrog-pipelines-folder
+
+  ## Add custom init containers - last init container to run
   customInitContainers: |
   #  - name: "custom-setup"
   #    image: "{{ .Values.initContainer.image }}"
@@ -1187,7 +1213,8 @@ vault:
   #      - 'touch {{ .Values.pipelines.mountPath }}/example-custom-setup'
   #    volumeMounts:
   #      - mountPath: "{{ .Values.pipelines.mountPath}}"
-  #        name: pipelines-data
+  #        name: jfrog-pipelines-folder
+
 
 # Filebeat Sidecar container
 ## The provided filebeat configuration is for Pipeline logs. It assumes you have a logstash installed and configured properly.
